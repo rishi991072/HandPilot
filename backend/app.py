@@ -25,7 +25,7 @@ except Exception as exc:
     PREDICTOR_IMPORT_ERROR = str(exc)
 
 app = FastAPI(title="ISLBridge AI API", description="ISL translation and desktop gesture API", version="1.0.0")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], allow_credentials=False, allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "https://handpilot-frontend.onrender.com"], allow_credentials=False, allow_methods=["*"], allow_headers=["*"])
 
 class PredictionRequest(BaseModel):
     sequence: list[list[float]]
